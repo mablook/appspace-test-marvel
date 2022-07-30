@@ -57,6 +57,7 @@ const CardDetails: FC = () => {
 
     return (
         <PageFadeIn waitFor={[item]}>
+                  <div className="main main-padding">
         <div className="card-content">
 
             <div className="link-back">
@@ -129,6 +130,7 @@ const CardDetails: FC = () => {
             </div>
 
             <Trademark/>
+        </div>
         </div>
         </PageFadeIn>
     )

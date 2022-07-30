@@ -7,7 +7,7 @@ import { SearchHeartFill } from 'react-bootstrap-icons';
 import background from '../../assets/jpg/marvel-header.jpg';
 import { useDispatch, useSelector } from "react-redux";
 import { searchItemSelector, setOrderValue, setSearchValue } from "src/redux/__marvel__/character/collection-slice";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CardSearchBar: FC = () => {
     const dispatch = useDispatch();
@@ -26,6 +26,7 @@ const CardSearchBar: FC = () => {
         }
     }
 
+
     useEffect(() => {
         globalSearch && setSearch(globalSearch)
     }, [globalSearch])
@@ -41,8 +42,9 @@ const CardSearchBar: FC = () => {
     const backGroundImage = `url(${background})`
 
     return (
+        <header className="header">
+        <div className="header-content">
         <div style={{ backgroundImage: backGroundImage, backgroundColor: '#fff' }} className="card-search-container">
-
             <div className="search-title search-element">
                 Find your hero
             </div>
@@ -56,7 +58,8 @@ const CardSearchBar: FC = () => {
             </div>
             </div>
         </div>
-
+        </div>
+  </header>
     )
 }
 

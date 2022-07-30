@@ -37,7 +37,6 @@ const charactersSlice = createSlice({
       state.status = "pending";
     });
     builder.addCase(getCharacter.fulfilled, (state: CharactersItemState, action) => {
-      console.log('--- set item ---')
       state.item = Object.assign([],action.payload.data.results);
       state.status = "fulfilled";
     });

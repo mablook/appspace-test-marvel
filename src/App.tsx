@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import logo from './logo.svg';
 import './App.scss';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import CardItemsList from './components/cardItemsList/CarditemsList';
 import CardDetails from './components/cardDetails/CardDetails';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,14 +34,10 @@ function App() {
         }
     }, [globalSearch, globalOrder])
 
+
     return (
         <BrowserRouter>
-            <header className="header">
-                <div className="header-content">
-                    <CardSearchBar/>
-                </div>
-            </header>
-            <div className="main main-padding">
+
                 <Routes>
                     <Route path="/" element={<CardItemsList items={items} total={total} />} />
                     <Route path="/view-item" element={<CardDetails />} >
@@ -49,7 +45,7 @@ function App() {
                     </Route>
                     <Route path="/" element={<CardItemsList items={items} total={total}/>}></Route>
                 </Routes>
-            </div>
+
         </BrowserRouter>
     );
 }
