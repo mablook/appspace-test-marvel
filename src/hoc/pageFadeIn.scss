@@ -1,0 +1,25 @@
+
+.fade-in{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.loading-container{
+  position: relative;
+}
+
+.loading{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 45%;
+  left: 45%;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+}

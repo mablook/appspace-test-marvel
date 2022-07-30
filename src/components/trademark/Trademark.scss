@@ -1,0 +1,23 @@
+
+.copyright {
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 100px;
+    right: 5px;
+    writing-mode: vertical-rl;
+    font-size: 1.5vw;
+    z-index: -1;
+  }
+
+  .copyright:before {
+    content: '\00a9';
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+
+@media only screen and (min-width: 1300px) {
+  .copyright {
+  font-size: 20px;
+  }
+}

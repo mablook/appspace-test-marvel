@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+
+.card-search-container{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-title{
+    font-size: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-weight: 700;
+    height: 120px;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px hsl(50, 50%, 45%),
+               2px 2px hsl(50, 50%, 40%),
+               3px 3px hsl(50, 50%, 35%),
+               4px 4px hsl(50, 50%, 34%),
+               5px 5px hsl(50, 50%, 33%),
+               6px 6px hsl(50, 50%, 32%),
+               7px 7px hsl(50, 50%, 31%),
+               8px 8px hsl(50, 50%, 30%),
+               9px 9px hsl(50, 50%, 29%),
+               10px 10px hsl(50, 50%, 28%),
+               10px 10px 30px rgba(0,0,0,.7),
+}
+
+.card-search{
+    min-height: 200px;
+}
+
+.search-element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .card-search{
+        min-height: 80px;
+    }
+}
+
+.input-search{
+    width: 300px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 30px;
+    color: #fff;
+    padding: 3px;
+    background-color: #ff7575;
+    border: 5px #fff solid
+}
+
+.button-search{
+    width: 100px;
+    height: 66px;
+    font-size: 30px;
+    line-height: 30px;
+    color: #fff;
+    padding: 3px;
+    background-color: #ff7575;
+    border: 5px #fff solid;
+    border-left: none;
+
+    cursor: pointer;
+}
+
+.button-order{
+    width: 80px;
+    height: 66px;
+    font-size: 30px;
+    line-height: 15px;
+    color: #fff;
+    padding: 3px;
+    background-color: #ff7575;
+    border: 5px #fff solid;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    & svg{
+        font-size: 30px;
+        padding-right: 10px;
+    }
+}

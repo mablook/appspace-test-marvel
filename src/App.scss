@@ -1,0 +1,29 @@
+.header {
+  top: 0;
+}
+
+.header-content{
+  color: #000!important;
+  background-color: rgb(135, 72, 72)!important;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.main-padding {
+  padding: 8px 16px!important;
+}
+
+
+@media (max-width: 992px){
+.main {
+  margin-left: 0!important;
+  margin-right: 0!important;
+}
+}

@@ -1,0 +1,144 @@
+.card-content {
+  padding: 30px;
+  background-color: #ff7575;
+}
+
+.card-details {
+  min-height: 500px;
+  background-color: #fff;
+  max-width: 940px;
+  min-width: 700px;
+  position: relative;
+}
+
+.flex-row{
+  position: relative;
+  display: flex
+}
+
+.details-image {
+  min-height: 100%;
+  background-size: cover;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  width: 400px;
+}
+
+.text-title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 28px;
+  text-transform: none;
+  padding: 30px 0px;
+}
+
+.text-description {
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+
+.item-list {
+  min-height: 130px;
+}
+
+.item-list li {
+  list-style: none;
+  position: relative;
+  padding: 3px 0 2px 25px;
+}
+
+.item-list li::before {
+  content: "*";
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.link-container {
+  position: absolute;
+}
+
+.button-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  left: 18px;
+  top: 600px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.47);
+}
+
+.button-link:hover {
+  color: white;
+}
+
+.button-link::before,
+.button-link::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+.button-link::before {
+  top: -2.5%;
+  left: -1%;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+.button-link::after {
+  bottom: -2.5%;
+  right: -1%;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+.button-link:hover::before,
+.button-link:hover::after {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.card-list-details {
+  margin: 20px;
+}
+
+.link-back {
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px;
+  & div {
+    display: flex;
+    align-items: center;
+    & svg {
+      margin-right: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .flex-row{
+    display: unset;
+  }
+  .details-image {
+    min-height: 400px;
+    width: inherit;
+    background-size: contain;
+  }
+
+  .card-details {
+    min-width: 380px;
+  }
+
+  .button-link {
+    top: 333px;
+    background-color: rgb(44 42 42 / 60%);
+  }
+}
