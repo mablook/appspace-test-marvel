@@ -53,9 +53,7 @@ function App() {
         }
     },[offset, total])
 
-    useEffect(() => {
-        dispatch(getCharactersByName({ limit: limit }))
-    }, [limit])
+
 
     useEffect(() => {
         if (globalSearch !== filterRef.current.name || globalOrder !== filterRef.current.order) {

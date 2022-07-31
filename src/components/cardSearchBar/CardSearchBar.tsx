@@ -6,7 +6,7 @@ import { ArrowDownCircleFill } from 'react-bootstrap-icons';
 import { SearchHeartFill } from 'react-bootstrap-icons';
 import background from '../../assets/jpg/marvel-header.jpg';
 import { useDispatch, useSelector } from "react-redux";
-import { searchItemSelector, setOrderValue, setSearchValue } from "src/redux/__marvel__/character/collection-slice";
+import { orderItemSelector, searchItemSelector, setOrderValue, setSearchValue } from "src/redux/__marvel__/character/collection-slice";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const CardSearchBar: FC = () => {
@@ -17,7 +17,7 @@ const CardSearchBar: FC = () => {
 
     const globalSearch = useSelector(searchItemSelector);
 
-    const [order, setOrder] = useState<boolean>(true);
+    const globalOrder = useSelector(orderItemSelector)
 
     const handleSearch = () => {
         if (search !== globalSearch) {
@@ -26,18 +26,14 @@ const CardSearchBar: FC = () => {
         }
     }
 
+    const handleOrder = (value:string) => {
+        dispatch(setOrderValue({ value: value }))
+    }
 
     useEffect(() => {
         globalSearch && setSearch(globalSearch)
     }, [globalSearch])
 
-    useEffect(() => {
-        if (order) {
-            dispatch(setOrderValue({ value: 'name' }))
-        } else {
-            dispatch(setOrderValue({ value: '-name' }))
-        }
-    }, [order])
 
     const backGroundImage = `url(${background})`
 
@@ -58,7 +54,7 @@ const CardSearchBar: FC = () => {
                 <button className="button-search" onClick={handleSearch}><SearchHeartFill/></button>
             </div>
             <div className="search-element">
-                <button className="button-order" onClick={() => setOrder(!order)}>{order ? <ArrowDownCircleFill /> : <ArrowUpCircleFill />} A</button>
+                <button className="button-order" onClick={() => handleOrder( globalOrder === 'name' ? '-name' : 'name')}>{globalOrder === 'name' ? <ArrowDownCircleFill /> : <ArrowUpCircleFill />} A</button>
             </div>
             </div>
         </div>

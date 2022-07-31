@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import PageFadeIn from "src/hoc/pageFadeIn";
 import { characterItemSelector, clearCharacterItem, getCharacter } from "src/redux/__marvel__/character/item-slice";
-import { CharacterItem, Thumbnail } from "uiTypes";
+import { CharacterItem } from "uiTypes";
 import Trademark from "../trademark/Trademark";
 import { ArrowLeftCircleFill } from 'react-bootstrap-icons';
 import './CardDetails.scss';
