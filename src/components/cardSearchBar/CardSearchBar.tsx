@@ -50,7 +50,11 @@ const CardSearchBar: FC = () => {
             </div>
             <div className="search-inputs">
             <div className="search-element">
-                <input type="text" className="input-search" value={search} onChange={e => setSearch(e.currentTarget.value)} />
+                <input type="text" className="input-search" value={search} onChange={e => setSearch(e.currentTarget.value)}     onKeyPress={event => {
+                if (event.key === 'Enter') {
+                    handleSearch()
+                }
+              }}/>
                 <button className="button-search" onClick={handleSearch}><SearchHeartFill/></button>
             </div>
             <div className="search-element">

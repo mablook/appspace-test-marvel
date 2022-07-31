@@ -8,16 +8,20 @@ import CardSearchBar from "../cardSearchBar/CardSearchBar";
 type Props = {
   items?: CharacterItem[]
   total?:number
+  offset?:number
+  nextAction?: () => void
+  prevAction?: () => void
 }
 
-const CardItemsList:FC<Props> = ({items, total}) => {
+const CardItemsList:FC<Props> = ({items, total, nextAction, prevAction, offset}) => {
+
 
     return(
       <>
       <CardSearchBar/>
       <PageFadeIn waitFor={[items]}>
       <div className="main main-padding">
-        <div className="total-items">found {total} results</div>
+        <div className="total-items"><div onClick={prevAction ? prevAction : ()=>{}} className={`navigate`}>prev</div> found {total} results <div onClick={nextAction ? nextAction : ()=>{}} className={`navigate`}>next</div></div>
         {
             items && items.map((e, i) => {
                 return(<CardItem key={`${e.id}-${i}`} item={e} />)

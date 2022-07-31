@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import { CharacterItem } from "uiTypes";
@@ -14,13 +14,9 @@ const CardItem:FC<Props> = ({item}) => {
 
   const { thumbnail } = item
 
-
-
   const viewCard = ({id}:{id:number}) => {
-    navigate('view-item', {state:{id:id,name:'sabaoon'}})
+    navigate('view-item', {state:{id:id}})
   }
-
-
 
     return (
       <div className="card-item" onClick={() => viewCard({ id:item.id })}>

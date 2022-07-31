@@ -19,4 +19,17 @@
     padding-bottom: 10px;
     text-align: center;
     font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.navigate{
+    cursor: pointer;
+}
+
+.link-disabled{
+    color: rgb(127, 127, 127);
+    cursor: default;
 }
