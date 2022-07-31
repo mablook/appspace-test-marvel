@@ -8,6 +8,7 @@ import { CharacterItem, Thumbnail } from "uiTypes";
 import Trademark from "../trademark/Trademark";
 import { ArrowLeftCircleFill } from 'react-bootstrap-icons';
 import './CardDetails.scss';
+import { charactersSelector } from "src/redux/__marvel__/character/collection-slice";
 
 const CardDetails: FC = () => {
     const navigate = useNavigate();
@@ -21,6 +22,7 @@ const CardDetails: FC = () => {
     const [link, setLink] = useState<string>()
 
     const selectorItem = useSelector(characterItemSelector)
+    const items = useSelector(charactersSelector)
 
     useEffect(() => {
         selectorItem && setItem(selectorItem[0])
@@ -28,7 +30,17 @@ const CardDetails: FC = () => {
 
     useEffect(() => {
         if (itemId) {
-            dispatch(getCharacter({ id: Number(itemId) }))
+            if(items){
+                const _item = items.filter( e => e.id === Number(itemId))
+                if(_item && _item[0]){
+                    setItem(_item[0])
+                }else{
+                    dispatch(getCharacter({ id: Number(itemId) }))
+                }
+            }else{
+                dispatch(getCharacter({ id: Number(itemId) }))
+            }
+
         }
         return () => {
             dispatch(clearCharacterItem())
@@ -61,7 +73,7 @@ const CardDetails: FC = () => {
         <div className="card-content">
 
             <div className="link-back">
-                        <div onClick={() => navigate(-1)}><ArrowLeftCircleFill/> back to list</div>
+                        <div onClick={() => navigate('/')}><ArrowLeftCircleFill/> back to list</div>
             </div>
             <div className="card-details">
                 <div className="flex-row">

@@ -65,8 +65,7 @@ const charactersSlice = createSlice({
       state.status = "pending";
     });
     builder.addCase(getCharactersByName.fulfilled, (state: CharactersState, action) => {
-      console.log('--- call ---')
-      state.items = state.items ? Object.assign(state.items,action.payload.data.results) : Object.assign([],action.payload.data.results)
+      state.items = action.payload.data.results
       state.total = action.payload.data.total
       state.status = "fulfilled";
     });
