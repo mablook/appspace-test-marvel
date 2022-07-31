@@ -1,7 +1,13 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This test is available for viewing on Heroku at: https://still-refuge-72687.herokuapp.com/
+this is a rest application using the api from: https://developer.marvel.com/
 
+the filter works by name
+the ordering works by name
+all items come from the marvel api, the documentation can be found here: https://developer.marvel.com/documentation
+this test suggests the use of a unidirectional state manager (although it is not necessary, the proposal was to show a little more about redux)
+using redux router and scss
 ## Available Scripts
 
 In the project directory, you can run:
