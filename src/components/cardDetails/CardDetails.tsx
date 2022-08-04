@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import PageFadeIn from "src/hoc/pageFadeIn";

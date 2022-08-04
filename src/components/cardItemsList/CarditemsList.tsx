@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react"
+import { FC } from "react"
 import './CardItemsList.scss';
 import CardItem from "../cardItems/CardItem"
 import { CharacterItem } from "uiTypes";

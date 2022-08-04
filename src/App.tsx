@@ -1,14 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import logo from './logo.svg';
 import './App.scss';
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CardItemsList from './components/cardItemsList/CarditemsList';
 import CardDetails from './components/cardDetails/CardDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { charactersSelector, clearCharactersItems, getCharactersByName, orderItemSelector, searchItemSelector, searchResultTotalSelector } from './redux/__marvel__/character/collection-slice';
-import { current } from '@reduxjs/toolkit';
-import { OffcanvasTitle } from 'react-bootstrap';
-import { Search } from 'react-bootstrap-icons';
+
 
 type Ref = {
     name?:string

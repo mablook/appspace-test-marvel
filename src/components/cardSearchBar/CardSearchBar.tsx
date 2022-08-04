@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from "react"
-import { Col, Row } from "react-bootstrap";
 import './CardSearchBar.scss';
 import { ArrowUpCircleFill } from 'react-bootstrap-icons';
 import { ArrowDownCircleFill } from 'react-bootstrap-icons';
@@ -7,7 +6,7 @@ import { SearchHeartFill } from 'react-bootstrap-icons';
 import background from '../../assets/jpg/marvel-header.jpg';
 import { useDispatch, useSelector } from "react-redux";
 import { orderItemSelector, searchItemSelector, setOrderValue, setSearchValue } from "src/redux/__marvel__/character/collection-slice";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CardSearchBar: FC = () => {
     const dispatch = useDispatch();
